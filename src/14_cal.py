@@ -23,16 +23,33 @@ import sys
 import calendar
 from datetime import datetime
 
+current = str(datetime.date(datetime.utcnow()))
 calendar.setfirstweekday(6)
 
 
 def printCalendar():
+
     yyyymm = input('YYYY-MM: ')
+
     if (len(yyyymm) == 0):
-        yyyymm = str(datetime.date(datetime.utcnow()))
+        yyyymm = current
+
     lis = yyyymm.split('-')
+
+    if (len(lis) == 1):
+
+        if (len(lis[0]) == 4):
+            lis.append(current.split('-')[1])
+
+        elif (len(lis[0]) == (1 or 2)):
+            lis.insert(0, current.split('-')[0])
+
+        else:
+            lis = current.split('-')
+
     year = int(lis[0])
     month = int(lis[1])
+
     print(calendar.month(year, month))
 
 
