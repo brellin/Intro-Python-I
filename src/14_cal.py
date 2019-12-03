@@ -22,3 +22,18 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+calendar.setfirstweekday(6)
+
+
+def printCalendar():
+    yyyymm = input('YYYY-MM: ')
+    if (len(yyyymm) == 0):
+        yyyymm = str(datetime.date(datetime.utcnow()))
+    lis = yyyymm.split('-')
+    year = int(lis[0])
+    month = int(lis[1])
+    print(calendar.month(year, month))
+
+
+printCalendar()
