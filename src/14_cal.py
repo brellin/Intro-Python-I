@@ -29,26 +29,29 @@ calendar.setfirstweekday(6)
 
 def printCalendar():
 
-    yyyymm = input('YYYY-MM: ')
+    yyyymm = []
+
+    for arg in sys.argv:
+        yyyymm.append(arg)
+    if (len(yyyymm) > 0):
+        yyyymm.pop(0)
 
     if (len(yyyymm) == 0):
-        yyyymm = current
+        yyyymm = current.split('-')
 
-    lis = yyyymm.split('-')
+    if (len(yyyymm) == 1):
 
-    if (len(lis) == 1):
+        if (len(yyyymm[0]) == 4):
+            yyyymm.append(current.split('-')[1])
 
-        if (len(lis[0]) == 4):
-            lis.append(current.split('-')[1])
-
-        elif (len(lis[0]) == (1 or 2)):
-            lis.insert(0, current.split('-')[0])
+        elif (len(yyyymm[0]) == 1 or len(yyyymm[0]) == 2):
+            yyyymm.insert(0, current.split('-')[0])
 
         else:
-            lis = current.split('-')
+            yyyymm = current.split('-')
 
-    year = int(lis[0])
-    month = int(lis[1])
+    year = int(yyyymm[0])
+    month = int(yyyymm[1])
 
     print(calendar.month(year, month))
 
