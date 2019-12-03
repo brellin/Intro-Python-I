@@ -19,23 +19,8 @@ print(f1(1, 2))
 # YOUR CODE HERE
 
 
-def f2(*argv):
-
-    arguments = 0
-
-    if (len(argv) == 0):
-        return
-
-    elif (type(argv[0]) == list):
-        argv = argv[0]
-
-    elif (len(argv) == 1):
-        return argv[0]
-
-    for arg in argv:
-        arguments += arg
-
-    return arguments
+def f2(*args):
+    return sum(args)
 
 
 print(f2(1))                    # Should print 1
@@ -46,7 +31,7 @@ print(f2(7, 9, 1, 3, 4, 9, 0))  # Should print 33
 a = [7, 6, 5, 4]
 
 # What thing do you have to add to make this work?
-print(f2(a))    # Should print 22
+print(f2(*a))    # Should print 22
 
 # Write a function f3 that accepts either one or two arguments. If one argument,
 # it returns that value plus 1. If two arguments, it returns the sum of the
@@ -73,7 +58,7 @@ print(f3(8))     # Should print 9
 
 # YOUR CODE HERE
 
-def f4(*args, **kwargs):
+def f4(**kwargs):
 
     for key, value in kwargs.items():
         print(f'key: {key}, value: {value}')

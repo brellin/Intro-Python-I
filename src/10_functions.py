@@ -4,7 +4,7 @@
 
 
 def is_even(n):
-    return num % 2 == 0
+    return n % 2 == 0
 
 
 # Read a number from the keyboard

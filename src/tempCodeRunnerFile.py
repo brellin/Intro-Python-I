@@ -1,1 +1,1 @@
-len(yyyymm) == 0
+name
