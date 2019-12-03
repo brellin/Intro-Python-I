@@ -75,13 +75,8 @@ print(f3(8))     # Should print 9
 
 def f4(*args, **kwargs):
 
-    if(kwargs):
-        for key, value in kwargs.items():
-            print(f'key: {key}, value: {value}')
-
-    else:
-        for key in args[0]:
-            print(f'key: {key}, value: {args[0][key]}')
+    for key, value in kwargs.items():
+        print(f'key: {key}, value: {value}')
 
 
 # Should print
@@ -101,4 +96,4 @@ d = {
 }
 
 # What thing do you have to add to make this work?
-f4(d)
+f4(**d)
