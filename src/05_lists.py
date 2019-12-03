@@ -16,9 +16,8 @@ print(x)
 # Using y, change x so that it is [1, 2, 3, 4, 8, 9, 10]
 # YOUR CODE HERE
 
-x.append(8)
-x.append(9)
-x.append(10)
+for num in range(8, 11):
+    x.append(num)
 
 print(x)
 
@@ -39,7 +38,7 @@ print(x)
 # Print the length of list x
 # YOUR CODE HERE
 
-print(x.__len__)
+print(x.__len__())
 
 # Print all the values in x multiplied by 1000
 # YOUR CODE HERE
