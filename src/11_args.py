@@ -23,14 +23,18 @@ def f2(*argv):
 
     arguments = 0
 
-    if (len(argv) <= 1 and type(argv[0]) != list):
-        return argv[0]
+    if (len(argv) == 0):
+        return
 
     elif (type(argv[0]) == list):
         argv = argv[0]
 
+    elif (len(argv) == 1):
+        return argv[0]
+
     for arg in argv:
         arguments += arg
+
     return arguments
 
 
@@ -70,9 +74,11 @@ print(f3(8))     # Should print 9
 # YOUR CODE HERE
 
 def f4(*args, **kwargs):
+
     if(kwargs):
         for key, value in kwargs.items():
             print(f'key: {key}, value: {value}')
+
     else:
         for key in args[0]:
             print(f'key: {key}, value: {args[0][key]}')

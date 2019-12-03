@@ -41,6 +41,7 @@ t = (1, 2, 5, 7, 99)
 
 
 def print_tuple(luple):
+
     if (type(luple) == int):
         print(luple)
         return
